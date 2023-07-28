@@ -21,7 +21,7 @@
     "esModuleInterop": true,
 
     /* new add */
-    "types": ["vite-plugin-svgr/client"]
+    "types": ["vite-plugin-svgr/client", "vite-plugin-svg-icons/client"]
 
   },
   "allowImportingTsExtensions": true,

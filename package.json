@@ -42,10 +42,12 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-prettier": "^4.0.0",
+    "terser": "^5.19.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-stylelint": "^4.3.0",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-svgr": "^3.2.0",
     "vite-plugin-windicss": "^1.9.0",
     "windicss": "^3.5.6"

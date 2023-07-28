@@ -1,4 +1,25 @@
+import SvgIcon from '../SvgIcon';
 import './index.scss';
+
+// 这种只会发出一个请求
+import ids from 'virtual:svg-icons-names';
+console.log(ids);
+const iconUrls = ids
+  .filter((item) => item.includes('-'))
+  .map((item) => item.slice(5));
+console.log(iconUrls);
+
+// 这种情况还是会发出http请求
+// const modules = import.meta.glob('../../assets/svgs/logo-*.svg', {
+//   eager: true,
+// });
+// // const iconUrls = Object.values(modules).map((mod: any) => mod.default);
+// const iconUrls = Object.values(modules).map((mod: any) => {
+//   const fileName = mod.default.split('/').pop();
+//   const [svgName] = fileName.split('.');
+//   return svgName;
+// });
+
 // import Worker from './example.js?worker';
 // import init from './fib.wasm?init';
 
@@ -17,8 +38,13 @@ import './index.scss';
 
 export function Header() {
   return (
-    <p className="header" p="y-20px">
-      This is Header Test count is
-    </p>
+    <div>
+      <p className="header" p="y-20px">
+        This is Header Test count is
+      </p>
+      {iconUrls.map((item) => (
+        <SvgIcon name={item} key={item} width="50" height="50" />
+      ))}
+    </div>
   );
 }

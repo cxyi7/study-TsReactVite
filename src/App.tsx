@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ReactComponent as ReactLogo } from '@/assets/svg/react.svg';
+import { ReactComponent as ReactLogo } from '@/assets/svgs/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { Header } from './components/header';

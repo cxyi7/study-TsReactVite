@@ -1,4 +1,4 @@
-import { ReactComponent as TestLogo } from '@/assets/svg/test.svg';
+import { ReactComponent as TestLogo } from '@/assets/svgs/test.svg';
 
 export function Footer() {
   return (
