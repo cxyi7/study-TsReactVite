@@ -5,12 +5,18 @@ import './App.css';
 import { Header } from './components/header';
 import { Body } from './components/body';
 import { Footer } from './components/footer';
+import React from 'react';
+import fib from 'virtual:fib';
+alert(`结果${fib(10)}`);
+
+import env from 'virtual:env';
+console.log(env);
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -35,7 +41,7 @@ function App() {
       <Header />
       <Body />
       <Footer />
-    </>
+    </div>
   );
 }
 

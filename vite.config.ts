@@ -6,6 +6,9 @@ import viteEslint from 'vite-plugin-eslint';
 import viteStylelint from 'vite-plugin-stylelint';
 import svgr from 'vite-plugin-svgr';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+// import testHookPlugin from './src/testHooks';
+import virtual from './src/virtual-module';
+import Inspect from 'vite-plugin-inspect';
 
 // 媒体类文件，包括mp4、webm、ogg、mp3、wav、flac和aac。
 // 字体类文件。包括woff、woff2、eot、ttf 和 otf。
@@ -37,6 +40,7 @@ export default defineConfig(({ mode }) => {
         '@': resolve(__dirname, './src'), // 把 @ 指向到 src 目录去
       },
     },
+    // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     plugins: [
       react(),
       windi(),
@@ -53,12 +57,20 @@ export default defineConfig(({ mode }) => {
         iconDirs: [path.resolve(process.cwd(), 'src/assets/svgs')], // 指定需要缓存的图标文件夹
         symbolId: 'icon-[dir]-[name]', // 指定symbolId格式
       }),
+      virtual(),
+      Inspect(),
+      // testHookPlugin(),
     ],
     assetsInclude: ['.gltf'], // 配置其它格式的静态资源
+    // optimizeDeps: {
+    //   // 为一个字符串数组
+    //   entries: ['./src/main.tsx'],
+    //   include: [], // 按需加载的依赖都可以声明到这个数组里
+    // },
     // 服务设置
     server: {
       host: true, // host设置为true才可以使用network的形式，以ip访问项目
-      port: 8080, // 端口号
+      port: 8082, // 端口号
       open: true, // 自动打开浏览器
       cors: true, // 跨域设置允许
       strictPort: false, // 如果端口已占用直接退出

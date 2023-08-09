@@ -1,6 +1,7 @@
 import text from '@/assets/img/text.jpg';
 import { useEffect } from 'react';
 import style from './index.module.scss';
+import React from 'react';
 
 export function Body() {
   useEffect(() => {

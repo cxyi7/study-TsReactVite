@@ -1,3 +1,5 @@
+import React from 'react';
+
 // SvgIcon/index.tsx
 export interface SvgIconProps {
   name: string;
